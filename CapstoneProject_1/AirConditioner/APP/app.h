@@ -22,8 +22,6 @@
 /**
  * \brief Initialize all modules and execute welcome routine
  * 
- * \param 
- * 
  * \return void
  */
 void APP_Init(void);
@@ -45,7 +43,7 @@ void APP_Start(void);
  * 
  * \return void
  */
-static void APP_adjustInit(void);
+void APP_AdjustInit(void);
 
 
 /**

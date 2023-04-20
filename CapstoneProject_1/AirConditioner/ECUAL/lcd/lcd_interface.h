@@ -98,7 +98,7 @@ void HLCD_gotoXY(Uchar8_t row, Uchar8_t pos);
  * input param 	: str --> which take string as argument
  * return		: void
  * */
-void HLCD_WriteString(Uchar8_t* str);
+void HLCD_WriteString(const char* str);
 
 
 

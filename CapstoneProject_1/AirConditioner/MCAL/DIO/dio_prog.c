@@ -20,7 +20,7 @@ volatile Uchar8_t* pinReg[4] = { PINA_REG, PINB_REG, PINC_REG, PIND_REG };
 
 Uchar8_t DIO_s8SETPortDir(enu_port enPortCopy,  enu_dir enPortDir)
 {
-	Uchar8_t errStatus = E_OK;
+	Uchar8_t errStatus = DIO_E_OK;
 
 	if (enPortCopy < PORT_INVALID && enPortDir < DIR_INVALID)
 	{
@@ -39,7 +39,7 @@ Uchar8_t DIO_s8SETPortDir(enu_port enPortCopy,  enu_dir enPortDir)
 	}
 	else
 	{
-		errStatus = E_NOK;
+		errStatus = DIO_E_NOK;
 	}
 	return errStatus;
 }
@@ -47,14 +47,14 @@ Uchar8_t DIO_s8SETPortDir(enu_port enPortCopy,  enu_dir enPortDir)
 
 Uchar8_t DIO_s8SETPortVal(enu_port enPortCopy,  Uchar8_t u8PortVal)
 {
-	Uchar8_t errStatus = E_OK;
+	Uchar8_t errStatus = DIO_E_OK;
 	if (enPortCopy < PORT_INVALID)
 	{
 		*portReg[enPortCopy] = u8PortVal;
 	}
 	else
 	{
-		errStatus = E_NOK;
+		errStatus = DIO_E_NOK;
 	}
 
 
@@ -65,14 +65,14 @@ Uchar8_t DIO_s8SETPortVal(enu_port enPortCopy,  Uchar8_t u8PortVal)
 
 Uchar8_t DIO_s8GETPortVal(enu_port enPortCopy,  Uchar8_t* pu8Val)
 {
-	Uchar8_t errStatus = E_OK;
+	Uchar8_t errStatus = DIO_E_OK;
 	if (enPortCopy < PORT_INVALID )
 	{
 		*pu8Val = *pinReg[enPortCopy];
 	}
 	else
 	{
-		errStatus = E_NOK;
+		errStatus = DIO_E_NOK;
 	}
 	return errStatus;
 }
@@ -82,7 +82,7 @@ Uchar8_t DIO_s8GETPortVal(enu_port enPortCopy,  Uchar8_t* pu8Val)
 
 Uchar8_t DIO_s8SETPinDir (enu_pin enPinCopy, enu_dir enPortDir)
 {
-	Uchar8_t errStatus = E_OK;
+	Uchar8_t errStatus = DIO_E_OK;
 	Uchar8_t portID;
 	Uchar8_t pinID;
 
@@ -106,7 +106,7 @@ Uchar8_t DIO_s8SETPinDir (enu_pin enPinCopy, enu_dir enPortDir)
 	}
 	else
 	{
-		errStatus = E_NOK;
+		errStatus = DIO_E_NOK;
 	}
 	return errStatus;
 }
@@ -114,7 +114,7 @@ Uchar8_t DIO_s8SETPinDir (enu_pin enPinCopy, enu_dir enPortDir)
 
 Uchar8_t DIO_s8SETPinVal (enu_pin enPinCopy, enu_val enPortVal)
 {
-	Uchar8_t errStatus = E_OK;
+	Uchar8_t errStatus = DIO_E_OK;
 	Uchar8_t portID;
 	Uchar8_t pinID;
 
@@ -138,7 +138,7 @@ Uchar8_t DIO_s8SETPinVal (enu_pin enPinCopy, enu_val enPortVal)
 	}
 	else
 	{
-		errStatus = E_NOK;
+		errStatus = DIO_E_NOK;
 	}
 	return errStatus;
 }
@@ -146,7 +146,7 @@ Uchar8_t DIO_s8SETPinVal (enu_pin enPinCopy, enu_val enPortVal)
 
 Uchar8_t DIO_s8TOGPinVal (enu_pin enPinCopy)
 {
-	Uchar8_t errStatus = E_OK;
+	Uchar8_t errStatus = DIO_E_OK;
 	Uchar8_t portID;
 	Uchar8_t pinID;
 
@@ -159,7 +159,7 @@ Uchar8_t DIO_s8TOGPinVal (enu_pin enPinCopy)
 	}
 	else
 	{
-		errStatus = E_NOK;
+		errStatus = DIO_E_NOK;
 	}
 	return errStatus;
 
@@ -167,7 +167,7 @@ Uchar8_t DIO_s8TOGPinVal (enu_pin enPinCopy)
 
 Uchar8_t DIO_s8GETPinVal (enu_pin enPinCopy, Uchar8_t* pu8Val)
 {
-	Uchar8_t errStatus = E_OK;
+	Uchar8_t errStatus = DIO_E_OK;
 	Uchar8_t portID;
 	Uchar8_t pinID;
 	if (enPinCopy < PIN_INVALID)
@@ -180,7 +180,7 @@ Uchar8_t DIO_s8GETPinVal (enu_pin enPinCopy, Uchar8_t* pu8Val)
 	}
 	else
 	{
-		errStatus = E_NOK;
+		errStatus = DIO_E_NOK;
 	}
 	return errStatus;
 }

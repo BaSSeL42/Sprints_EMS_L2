@@ -18,6 +18,7 @@
 /**************************************************************************************************
  * 											Includes
  *************************************************************************************************/
+//#define F_CPU 8000000UL
 #include <util/delay.h>
 #include <stdlib.h>
 #include "../../Common/STD_Types.h"
@@ -269,7 +270,7 @@ void HLCD_gotoXY(Uchar8_t row, Uchar8_t pos)
  * input param 	: str --> which take string as argument
  * return		: void
  * */
-void HLCD_WriteString(Uchar8_t* str)
+void HLCD_WriteString(const char* str)
 {
 	Uint16_t count = 0;
 	Uchar8_t string = str[count];
@@ -291,8 +292,8 @@ void HLCD_WriteString(Uchar8_t* str)
 void HLCD_WriteInt(Uint32_t number)
 {
 	Uchar8_t STR[INDEX];
-	itoa(number, STR, 10);
-	HLCD_WriteString(STR);
+	itoa(number, (char*)STR, 10);
+	HLCD_WriteString((const char*)STR);
 }
 
 

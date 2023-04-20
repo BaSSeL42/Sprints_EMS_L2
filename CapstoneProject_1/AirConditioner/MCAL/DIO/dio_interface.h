@@ -9,8 +9,8 @@
 #define MCAL_DIO_DIO_INTERFACE_H_
 
 
-#define E_OK	0
-#define E_NOK	-1
+#define DIO_E_OK	0
+#define DIO_E_NOK	-1
 
 #define PORT_INPUT		0x00
 #define PORT_OUTPUT		0xff

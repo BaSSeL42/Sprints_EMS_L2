@@ -111,7 +111,7 @@ en_TIMErrorState_t TIM0_GetState(en_TIMState_t* u8_a_State)
 {
 	if(u8_a_State != NULL)
 	{
-		if (TCCR0 & 0b00000111 != 0) 
+		if ((TCCR0 & 0b00000111) != 0) 
 		{
 			*u8_a_State = TIM0_RUNNING;
 		}
@@ -140,7 +140,16 @@ void TIM0_DisableOVFInterrupt(void)
 
 en_TIMErrorState_t TIM0_SetOVFCallback(void (*pv_a_CallbackFn)(void))
 {
-	TIM0_OVFCallbackFn = pv_a_CallbackFn;
+	if(pv_a_CallbackFn != NULL)
+	{
+		TIM0_OVFCallbackFn = pv_a_CallbackFn;
+	}
+	else
+	{
+		return TIM_NOK;
+	}
+	
+	return TIM_OK;
 }
 
 

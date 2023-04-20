@@ -64,15 +64,6 @@ typedef struct
 	EN_ADC_EVENT_TRIGGER_SOUREC_t triggerSource;
 }ST_ADC_CFG_t;
 
-/*====================================================*/
-
-//#define EXT_INT0 __vector_1
-//#define EXT_INT1 __vector_2
-//#define EXT_INT2 __vector_3
-
-
-#define ISR(INT_VECT)void INT_VECT(void) __attribute__ ((signal,used));\
-void INT_VECT(void)
 
 /*====================================================*/
 #define AREF_INTERNAL()		CLEAR_BIT(ADMUX_REG,ADMUX_REG_REFS0_BIT);\

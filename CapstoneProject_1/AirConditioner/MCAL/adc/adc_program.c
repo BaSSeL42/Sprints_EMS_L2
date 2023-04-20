@@ -12,13 +12,9 @@
 #include "../../Common/BIT_Math.h"
 #include "../../Common/vect_table.h"
 
-//#include "adc_register.h"
 #include "adc_private.h"
-
 #include "adc_interface.h"
 
-
-#define E_OK                   				(Std_ReturnType)0x01
 /*************************************************************************************************************
  * 												Global Variables
  ************************************************************************************************************/
@@ -142,7 +138,6 @@ Std_ReturnType ADC_StartConversion(const ST_ADC_CFG_t *_adc)
 Std_ReturnType ADC_GetConversionResult(const ST_ADC_CFG_t *_adc , Uint16_t *_ConversionResult)
 {
 	Std_ReturnType ret = E_NOT_OK;
-	volatile Uint16_t temp;
 
 	if(NULL == _adc || NULL == _ConversionResult)
 	{
@@ -151,12 +146,7 @@ Std_ReturnType ADC_GetConversionResult(const ST_ADC_CFG_t *_adc , Uint16_t *_Con
 	else
 	{
 		
-		while(GET_BIT(ADCSRA_REG,ADCSRA_REG_ADIF_BIT) == 0)
-		{
-			//temp = ADCL_REG + (ADCH_REG << 8);
-			//if (temp)
-			 //*_ConversionResult = temp;
-		}
+		while(GET_BIT(ADCSRA_REG,ADCSRA_REG_ADIF_BIT) == 0);
 
 		CLEAR_BIT(ADCSRA_REG,ADCSRA_REG_ADIF_BIT);
 

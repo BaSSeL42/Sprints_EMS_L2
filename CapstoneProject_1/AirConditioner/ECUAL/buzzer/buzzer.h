@@ -14,7 +14,7 @@
  * 													Macros
  ************************************************************************************************************/
 //#define BUZZER_PORT				GPIO_PORTB_INDEX
-#define BUZZER_PIN				DIO_PINB_4
+#define BUZZER_PIN				DIO_PINB_3
 
 /*************************************************************************************************************
  * 											User-defined data types
@@ -39,8 +39,22 @@ typedef enum
 /*************************************************************************************************************
  * 											  Function Prototypes
  ************************************************************************************************************/
+
+/**
+ * \brief Initialize buzzer pin as output
+ * \param pst_a_buzzer reference to buzzer
+ * \return void
+ */
 void BUZ_Init(st_Buzzer_t* pst_a_buzzer);
-en_BuzzerErrorState_t BUZ_Enable(st_Buzzer_t* pst_a_buzzer);
-en_BuzzerErrorState_t BUZ_SetState(st_Buzzer_t* pst_a_buzzer, en_BuzzerState_t u16_a_state);
+
+/**
+ * \brief Turn the buzzer on/off
+ * 
+ * \param pst_a_buzzer reference to buzzer
+ * \param u16_a_state BUZ_ON (or) BUZ_OFF
+ * 
+ * \return en_BuzzerErrorState_t
+ */
+en_BuzzerErrorState_t BUZ_SetState(st_Buzzer_t* pst_a_buzzer, en_BuzzerState_t en_a_state);
 
 #endif /* BUZZER_H_ */

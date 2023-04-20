@@ -16,7 +16,6 @@
 /*************************************************************************************************************
 * 												Global Variables
 ************************************************************************************************************/
-//ST_pin_config_t st_gs_SensorPin = {TEMP_SENSOR_PORT, TEMP_SENSOR_PIN, GPIO_DIRECTION_INPUT, GPIO_LOGIC_LOW};
 st_TempSensor_t st_g_TempSensor = {TEMP_SENSOR_PIN};
 float32_t f32_g_StepSize;
 	
