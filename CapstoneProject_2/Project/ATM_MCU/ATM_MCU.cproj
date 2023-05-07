@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>{7d5afecb-66f4-417f-83e8-74172755477c}</ProjectGuid>
+    <avrdevice>ATmega32A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>ATM_MCU</AssemblyName>
+    <Name>ATM_MCU</Name>
+    <RootNamespace>ATM_MCU</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.52.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E9502</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega32a -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega32a -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="APP\app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\app.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ATM_MODULE\atm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ATM_MODULE\atm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ATM_MODULE\database_check.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ATM_MODULE\database_check.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Common\BIT_Math.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Common\STD_Types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Common\vect_table.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\button\button.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\button\button.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\buzzer\buzzer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\buzzer\buzzer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\hspi\hspi_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\hspi\hspi_program.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\htimer0\htimer0.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\htimer0\htimer0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\htimer0\htimer0_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\HTimer\HTimer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\HTimer\HTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\h_ext_int\h_ext_int.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\h_ext_int\h_ext_int.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\icu\sw_icu.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\icu\sw_icu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\keypad\keypad.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\keypad\keypad.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\lcd\lcd_config.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\lcd\lcd_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\lcd\lcd_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\lcd\lcd_program.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\dio\dio_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\dio\dio_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\dio\dio_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\dio\dio_prog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\extint\extinterrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\extint\extinterrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\extint\ext_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\spi\spi_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\spi\spi_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\spi\spi_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\spi\spi_program.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\spi\spi_register.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer0\tim0_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer0\tim0_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer0\tim0_program.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer0\tim0_register.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer1\tim1_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer1\tim1_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer1\tim1_program.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer1\tim1_register.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer\TIMER_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer\TIMER_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer\TIMER_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\timer\Timer_Source.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ATM_MODULE\" />
+    <Folder Include="Common\" />
+    <Folder Include="ECUAL\hspi\" />
+    <Folder Include="ECUAL\h_ext_int\" />
+    <Folder Include="ECUAL\keypad" />
+    <Folder Include="ECUAL\buzzer" />
+    <Folder Include="ECUAL\htimer0" />
+    <Folder Include="ECUAL\HTimer" />
+    <Folder Include="ECUAL\button" />
+    <Folder Include="ECUAL\lcd" />
+    <Folder Include="ECUAL\icu" />
+    <Folder Include="MCAL" />
+    <Folder Include="ECUAL" />
+    <Folder Include="MCAL\dio\" />
+    <Folder Include="MCAL\extint\" />
+    <Folder Include="MCAL\timer1" />
+    <Folder Include="MCAL\timer0" />
+    <Folder Include="MCAL\timer" />
+    <Folder Include="MCAL\spi\" />
+    <Folder Include="APP" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
