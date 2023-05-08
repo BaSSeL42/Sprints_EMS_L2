@@ -17,8 +17,7 @@ typedef enum
 	CardProgMode_GetPan,
 	CardProgMode_GetPin,
 	CardUserMode,
-	CardCommMode,
-	CardMcuIdle
+	CardCommMode
 }en_CardStatus_t;
 
 
@@ -26,8 +25,16 @@ typedef enum
  * 											  Function Prototypes
  ************************************************************************************************************/
 
-
+/**
+ * \brief Initializations of all used peripherals
+ * \return void 
+ */
 void APP_Init(void);
+
+/**
+ * \brief The main logic of the Card
+ * \return void
+ */
 void APP_Start(void);
  
 

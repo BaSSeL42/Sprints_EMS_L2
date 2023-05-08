@@ -4,13 +4,20 @@
  * Created: 02/05/2023 19:50:35
  *  Author: 20101
  */ 
-
+/*************************************************************************************************************
+* 													Includes
+************************************************************************************************************/
 #include "card_database.h"
 
+/*************************************************************************************************************
+* 												Global Variables
+************************************************************************************************************/
+Uchar8_t pin_arr[PIN_LENGTH] = "";
+Uchar8_t pan_arr[MAX_PAN_LENGTH] = "";
 
-Uchar8_t pin_arr[5] = "";
-Uchar8_t pan_arr[20] = "";
-
+/*************************************************************************************************************
+* 											Function Implementation
+************************************************************************************************************/
 /*
  * AUTHOR			: Bassel Yasser Mahmoud
  * FUNCTION			: APP_terminalPinGet
@@ -22,7 +29,7 @@ en_terminalPinGetStatus_t APP_terminalPinGet(Uchar8_t* arr)
 	en_terminalPinGetStatus_t errorStatus = PINGET_OK;
 
 	Uchar8_t counter = 0, flag = 0;
-	HUSART_receiveSTRING(arr, 5);
+	HUSART_receiveSTRING(arr, PIN_LENGTH);
 	while(arr[counter] != null)
 	{
 		if(arr[counter] >= '0' && arr[counter] <= '9')
@@ -37,7 +44,7 @@ en_terminalPinGetStatus_t APP_terminalPinGet(Uchar8_t* arr)
 			break;
 		}
 	}
-	if(counter < 4 && flag == 0)
+	if(counter < PIN_LENGTH-1 && flag == 0)
 	{
 		HUSART_sendSTRING( (Uchar8_t*) "\rbelow 4 dig ");
 		errorStatus = PINGET_NOK;
@@ -132,15 +139,17 @@ EN_TerminalDataState ReadCardData(Uchar8_t *CardPan,Uchar8_t *CardPin)
 		return ret;
 }
 
-en_CardPinMatchError_t CARD_MatchPINs()
+
+en_CardPinMatchError_t CARD_MatchPINs(Uchar8_t *pu8_a_pin)
 {
-	Uchar8_t PIN_Confirm[10], u8_l_PINiterator;
+	Uchar8_t PIN_Confirm[PIN_LENGTH], u8_l_PINiterator;
 	Uchar8_t u8_l_ValidatePIN, u8_l_ValidateConfirmPIN;
 	
 	/* Get PIN from user */
 	HUSART_sendSTRING( (Uchar8_t*) "\n\rEnter your PIN : ");
-	u8_l_ValidatePIN = APP_terminalPinGet(pin_arr);
+	u8_l_ValidatePIN = APP_terminalPinGet(pu8_a_pin);
 	if(u8_l_ValidatePIN == PINGET_NOK) return PIN_Match_NOK;
+	
 	/* Get PIN again for Confirmation */
 	HUSART_sendSTRING((Uchar8_t *)"\n\rConfirm Your PIN : ");
 	u8_l_ValidateConfirmPIN = APP_terminalPinGet(PIN_Confirm);
@@ -150,7 +159,7 @@ en_CardPinMatchError_t CARD_MatchPINs()
 		/* Check if the user entered same PIN both times */
 		for(u8_l_PINiterator=0; u8_l_PINiterator<PIN_LENGTH; u8_l_PINiterator++)
 		{
-			if(pin_arr[u8_l_PINiterator] != PIN_Confirm[u8_l_PINiterator])
+			if(pu8_a_pin[u8_l_PINiterator] != PIN_Confirm[u8_l_PINiterator])
 			{
 				HUSART_sendSTRING((Uchar8_t *)"\n\rPin Not Matched");
 				return PIN_Match_NOK;
@@ -164,9 +173,3 @@ en_CardPinMatchError_t CARD_MatchPINs()
 	return PIN_Match_NOK;
 }
 
-
-
-void CARD_SendTrigger(void)
-{
-	//ReadCardData();
-}

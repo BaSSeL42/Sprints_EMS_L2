@@ -9,9 +9,9 @@ main.d main.o: .././main.c .././APP/app.h .././APP/../ATM_MODULE/atm.h \
  .././APP/../ATM_MODULE/../ECUAL/hspi/hspi_interface.h \
  .././APP/../ATM_MODULE/../ECUAL/h_ext_int/h_ext_int.h \
  .././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/extinterrupt.h \
- .././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/../../Common/vect_table.h \
- .././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/../../Common/BIT_Math.h \
- .././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/../../Common/STD_Types.h \
+ c:\users\arabtech\desktop\doc\sprints_simpleatm\project\atm_mcu\common\vect_table.h \
+ c:\users\arabtech\desktop\doc\sprints_simpleatm\project\atm_mcu\common\bit_math.h \
+ c:\users\arabtech\desktop\doc\sprints_simpleatm\project\atm_mcu\common\std_types.h \
  .././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/ext_config.h \
  .././APP/../ATM_MODULE/../ECUAL/htimer0/htimer0.h \
  .././APP/../ATM_MODULE/../ECUAL/Button/button.h \
@@ -42,11 +42,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 .././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/extinterrupt.h:
 
-.././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/../../Common/vect_table.h:
+c:\users\arabtech\desktop\doc\sprints_simpleatm\project\atm_mcu\common\vect_table.h:
 
-.././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/../../Common/BIT_Math.h:
+c:\users\arabtech\desktop\doc\sprints_simpleatm\project\atm_mcu\common\bit_math.h:
 
-.././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/../../Common/STD_Types.h:
+c:\users\arabtech\desktop\doc\sprints_simpleatm\project\atm_mcu\common\std_types.h:
 
 .././APP/../ATM_MODULE/../ECUAL/h_ext_int/../../MCAL/extint/ext_config.h:
 

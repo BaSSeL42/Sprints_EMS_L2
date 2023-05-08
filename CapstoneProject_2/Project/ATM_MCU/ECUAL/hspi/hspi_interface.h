@@ -24,6 +24,7 @@
 /* Used in slave MCU for requesting communication from master */
 #define SLAVE_SEND_REQUEST_PIN		DIO_PINB_0		
 
+#define DATA_END					'#'
 /*************************************************************************************************************
  * 											User-defined data types
  ************************************************************************************************************/

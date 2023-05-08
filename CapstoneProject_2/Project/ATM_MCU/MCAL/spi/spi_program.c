@@ -157,31 +157,12 @@ en_SPI_ErrorState_t SPI_SetCallback(void (*pv_a_CallbackFn)(void))
  ************************************************************************************************************/
 ISR(SPI_STC_INT)
 {
-	/*------------------------ Reception ------------------------*/
-	u8_g_SlaveReceive = SPDR;
-	//DIO_s8SETPortVal(DIO_PORTA, u8_g_SlaveReceive);
-	
-	/* If Max size is exceeded, start overriding data */
-	if(u8_g_SlaveRxIndex == SPI_BUFFER_SIZE) u8_g_SlaveRxIndex = 0;
-	if(u8_g_SlaveReceive != DATA_END)
+	if(SPI_CallbackFn != NULL)
 	{
-		/* Store received byte in buffer */
-		arr_g_SlaveRxBuffer[u8_g_SlaveRxIndex] = u8_g_SlaveReceive;
-		u8_g_SlaveRxIndex++;
+		SPI_CallbackFn();
 	}
 	else
-	{	// Get the number of received bytes
-		u8_g_SlaveRxLen = u8_g_SlaveRxIndex;
-	}
-	
-	/*------------------------- Sending -------------------------*/
-	//u8_g_SlaveTxIndex++;
-	if((u8_g_SlaveTxIndex < u8_g_SlaveTxLen) && (pu8_g_SlaveTxPtr != NULL))
 	{
-		SPDR = pu8_g_SlaveTxPtr[u8_g_SlaveTxIndex++];
-	}
-	else if(u8_g_SlaveTxIndex >= u8_g_SlaveTxLen)
-	{
-		SPDR = DATA_END;
+		/* Do Nothing */
 	}
 }
